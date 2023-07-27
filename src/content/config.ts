@@ -20,9 +20,19 @@ const resumeProjects = defineCollection({
     liveLink: z.string().optional(),
     githubLink: z.string().optional()
   })
-})
+});
+
+const workHistory = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    startDate: z.string(),
+    endDate: z.string().optional()
+  })
+});
 
 export const collections = {
   "summary": resumeSummary,
-  "projects": resumeProjects
+  "projects": resumeProjects,
+  "history": workHistory
 };

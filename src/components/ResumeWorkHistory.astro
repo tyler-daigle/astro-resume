@@ -1,7 +1,19 @@
 ---
+import HistoryItem from "./HistoryItem.astro";
 import SectionHeader from "./SectionHeader.astro";
+import { getCollection } from "astro:content";
+const workHistory = await getCollection("history");
 ---
 
 <section>
   <SectionHeader>Work History</SectionHeader>
+  <ul>
+    {
+      workHistory.map((history) => (
+        <li>
+          <HistoryItem history={history} />
+        </li>
+      ))
+    }
+  </ul>
 </section>
