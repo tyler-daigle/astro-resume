@@ -1,11 +1,13 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 const [resumeSummary] = await getCollection("summary");
-const { firstName, lastName, emailAddress, siteLink } = resumeSummary.data;
+const { firstName, lastName, emailAddress, siteLink, phoneNumber, githubLink } =
+  resumeSummary.data;
 ---
 
 <header class="text-center flex flex-col gap-2">
   <h1 class="text-4xl font-bold">{firstName} {lastName}</h1>
-  <p>{siteLink}</p>
+  <p>{siteLink} {githubLink && githubLink}</p>
   <p>{emailAddress}</p>
+  {phoneNumber && <p>{phoneNumber}</p>}
 </header>

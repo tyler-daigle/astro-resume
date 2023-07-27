@@ -1,2 +1,11 @@
 ---
+import { getCollection } from "astro:content";
+const [resumeSummary] = await getCollection("summary");
+const { Content } = await resumeSummary.render();
 ---
+
+<section>
+  <div class="my-4">
+    <Content />
+  </div>
+</section>

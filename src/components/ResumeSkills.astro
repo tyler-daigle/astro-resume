@@ -1,0 +1,13 @@
+---
+import { getCollection } from "astro:content";
+import SectionHeader from "../components/SectionHeader.astro";
+const [resumeSummary] = await getCollection("summary");
+const { skills } = resumeSummary.data;
+---
+
+<section>
+  <SectionHeader>Skills</SectionHeader>
+  <ul class="flex gap-4 justify-center">
+    {skills.map((skill) => <li>{skill}</li>)}
+  </ul>
+</section>

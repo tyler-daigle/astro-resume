@@ -1,0 +1,19 @@
+---
+import ProjectItem from "./ProjectItem.astro";
+import { getCollection } from "astro:content";
+import SectionHeader from "./SectionHeader.astro";
+const projects = await getCollection("projects");
+---
+
+<section>
+  <SectionHeader>Projects</SectionHeader>
+  <ul class="my-4">
+    {
+      projects.map((project) => (
+        <li class="my-4">
+          <ProjectItem project={project} />
+        </li>
+      ))
+    }
+  </ul>
+</section>

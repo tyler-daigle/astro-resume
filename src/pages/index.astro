@@ -1,6 +1,9 @@
 ---
 import ResumeLayout from "../layouts/ResumeLayout.astro";
 import ResumeHeader from "../components/ResumeHeader.astro";
+import ResumeSummary from "../components/ResumeSummary.astro";
+import ResumeSkills from "../components/ResumeSkills.astro";
+import ResumeProjects from "../components/ResumeProjects.astro";
 ---
 
 <html lang="en">
@@ -9,11 +12,16 @@ import ResumeHeader from "../components/ResumeHeader.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Your Resume</title>
   </head>
   <body>
     <ResumeLayout>
-      <ResumeHeader />
+      <main>
+        <ResumeHeader />
+        <ResumeSummary />
+        <ResumeSkills />
+        <ResumeProjects />
+      </main>
     </ResumeLayout>
   </body>
 </html>

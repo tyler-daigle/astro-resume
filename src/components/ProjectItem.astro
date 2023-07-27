@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+const { title, liveLink, githubLink } = project.data;
+---
+
+<section>
+  <h3>{title}</h3>
+  {liveLink && <p>{liveLink}</p>}
+  {githubLink && <p>{githubLink}</p>}
+
+  <div>
+    <Content />
+  </div>
+</section>
