@@ -11,11 +11,12 @@ const { title, liveLink, githubLink } = project.data;
 ---
 
 <section>
-  <h3 class="text-2xl">{title}</h3>
-  {liveLink && <p>{liveLink}</p>}
-  {githubLink && <p>{githubLink}</p>}
-
-  <div class="content-container">
+  <h3 class="text-2xl my-4 text-sky-950 font-bold">{title}</h3>
+  <div class="flex flex-col my-2 text-lg">
+    {liveLink && <a href={liveLink}>{liveLink}</a>}
+    {githubLink && <a href={githubLink}>{githubLink}</a>}
+  </div>
+  <div class="content-container text-lg">
     <Content />
   </div>
 </section>
